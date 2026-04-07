@@ -1,0 +1,214 @@
+/*
+ * AirCam Monitor — Cameroun · IndabaX 2026
+ * style.css — Complément du CSS intégré dans app.py
+ *
+ * Ce fichier contient uniquement les surcharges Dash-specific
+ * qui ne peuvent pas être dans index_string (timing CSS).
+ * Toutes les variables sont définies dans index_string.
+ */
+
+/* ══════════════════════════════════════════════════════════════
+   DASH DCC.GRAPH — responsive et propre
+   ══════════════════════════════════════════════════════════════ */
+.dash-graph {
+    width: 100% !important;
+}
+.dash-graph .svg-container {
+    width: 100% !important;
+}
+/* Tooltip Plotly */
+.hoverlayer .hovertext rect {
+    fill: var(--bg-card) !important;
+    stroke: var(--border) !important;
+}
+.hoverlayer .hovertext text {
+    fill: var(--text-primary) !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 11px !important;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   DASH DATA TABLE — dark/light adaptatif
+   ══════════════════════════════════════════════════════════════ */
+.dash-spreadsheet-container .dash-spreadsheet-inner td,
+.dash-spreadsheet-container .dash-spreadsheet-inner th {
+    background-color: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border) !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 12px !important;
+}
+.dash-spreadsheet-container .dash-spreadsheet-inner th {
+    font-weight: 700 !important;
+    color: var(--text-secondary) !important;
+    font-size: 10px !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+    background-color: var(--bg-surface) !important;
+}
+.dash-spreadsheet-container .dash-spreadsheet-inner tr:hover td {
+    background-color: var(--bg-surface) !important;
+}
+.dash-spreadsheet-container .dash-header {
+    background-color: var(--bg-surface) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   BOOTSTRAP OVERRIDES — harmonisation thème
+   ══════════════════════════════════════════════════════════════ */
+.card {
+    background-color: var(--bg-card) !important;
+    border-color: var(--border) !important;
+    color: var(--text-primary) !important;
+}
+.card-header {
+    background-color: var(--bg-surface) !important;
+    border-color: var(--border) !important;
+    color: var(--text-primary) !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+}
+.card-body { background-color: var(--bg-card) !important; }
+
+/* Accordion */
+.accordion-item          { background: var(--bg-card) !important;    border-color: var(--border) !important; }
+.accordion-button        { background: var(--bg-surface) !important;  color: var(--text-primary) !important; font-family: 'Inter', sans-serif !important; font-size: 13px !important; }
+.accordion-button:not(.collapsed) { background: var(--bg-card) !important; color: var(--cyan) !important; box-shadow: none !important; }
+.accordion-button::after { filter: invert(0.5); }
+.accordion-body          { background: var(--bg-card) !important;      color: var(--text-secondary) !important; font-size: 13px !important; }
+
+/* Tabs Bootstrap */
+.nav-tabs             { border-color: var(--border) !important; }
+.nav-link             { color: var(--text-secondary) !important; font-family: 'Inter', sans-serif !important; font-size: 12px !important; }
+.nav-link.active      { color: var(--cyan) !important; background: var(--bg-card) !important; border-color: var(--border) var(--border) var(--bg-card) !important; }
+.nav-link:hover:not(.active) { color: var(--text-primary) !important; }
+
+/* Modal */
+.modal-content        { background: var(--bg-card) !important; border-color: var(--border) !important; }
+.modal-header         { border-color: var(--border) !important; color: var(--text-primary) !important; }
+.modal-body           { color: var(--text-secondary) !important; }
+.modal-footer         { border-color: var(--border) !important; }
+
+/* Badge Bootstrap */
+.badge.bg-primary   { background-color: var(--cyan) !important; color: var(--bg-base) !important; }
+.badge.bg-success   { background-color: var(--green) !important; color: var(--bg-base) !important; }
+.badge.bg-warning   { background-color: var(--yellow) !important; color: var(--bg-base) !important; }
+.badge.bg-danger    { background-color: var(--red) !important; }
+
+/* ══════════════════════════════════════════════════════════════
+   DASH DROPDOWN — surcharge précise pour variantes dark/light
+   ══════════════════════════════════════════════════════════════ */
+.ac-dropdown .Select-input input {
+    color: var(--text-primary) !important;
+    font-family: 'Inter', sans-serif !important;
+}
+.ac-dropdown .VirtualizedSelectFocusedOption {
+    background: var(--bg-surface) !important;
+}
+/* Flèche dropdown */
+.ac-dropdown .Select-arrow-zone:hover > .Select-arrow {
+    border-top-color: var(--text-primary) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RC-SLIDER — Simulation "Et si?"
+   ══════════════════════════════════════════════════════════════ */
+.rc-slider-tooltip-inner {
+    background-color: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border) !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 11px !important;
+    padding: 3px 8px !important;
+    border-radius: 6px !important;
+}
+.rc-slider-tooltip-arrow { border-top-color: var(--border) !important; }
+
+/* ══════════════════════════════════════════════════════════════
+   DASH-LEAFLET — carte adaptative
+   ══════════════════════════════════════════════════════════════ */
+.leaflet-control-attribution {
+    background: var(--bg-overlay) !important;
+    color: var(--text-muted) !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 9px !important;
+    border-radius: 4px !important;
+}
+.leaflet-control-zoom a {
+    background: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border) !important;
+}
+.leaflet-control-zoom a:hover {
+    background: var(--bg-surface) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ANIMATIONS SUPPLÉMENTAIRES
+   ══════════════════════════════════════════════════════════════ */
+@keyframes countUp {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.count-up { animation: countUp 0.5s ease forwards; }
+
+/* Glow sur les valeurs critiques */
+@keyframes danger-pulse {
+    0%,100% { text-shadow: 0 0 0px var(--red); }
+    50%     { text-shadow: 0 0 12px var(--red); }
+}
+.danger-glow { animation: danger-pulse 2s infinite; }
+
+/* ══════════════════════════════════════════════════════════════
+   UTILITIES — classes courtes utiles partout
+   ══════════════════════════════════════════════════════════════ */
+.text-primary   { color: var(--text-primary) !important; }
+.text-secondary { color: var(--text-secondary) !important; }
+.text-muted     { color: var(--text-muted) !important; }
+.text-cyan      { color: var(--cyan) !important; }
+.text-green     { color: var(--green) !important; }
+.text-red       { color: var(--red) !important; }
+.text-orange    { color: var(--orange) !important; }
+.text-yellow    { color: var(--yellow) !important; }
+.text-purple    { color: var(--purple) !important; }
+
+.bg-card     { background: var(--bg-card) !important; }
+.bg-surface  { background: var(--bg-surface) !important; }
+.border-ac   { border-color: var(--border) !important; }
+
+.fw-800 { font-weight: 800 !important; }
+.fw-700 { font-weight: 700 !important; }
+.fw-600 { font-weight: 600 !important; }
+.fw-500 { font-weight: 500 !important; }
+
+.font-mono { font-family: 'JetBrains Mono', monospace !important; }
+
+.rounded-sm  { border-radius: 6px !important; }
+.rounded-md  { border-radius: 10px !important; }
+.rounded-lg  { border-radius: 14px !important; }
+.rounded-xl  { border-radius: 20px !important; }
+.rounded-full{ border-radius: 99px !important; }
+
+/* Flex shortcuts */
+.flex-center { display: flex !important; align-items: center !important; justify-content: center !important; }
+.flex-between{ display: flex !important; align-items: center !important; justify-content: space-between !important; }
+.flex-start  { display: flex !important; align-items: center !important; }
+
+/* Gap */
+.gap-4  { gap: 4px !important; }
+.gap-8  { gap: 8px !important; }
+.gap-12 { gap: 12px !important; }
+.gap-16 { gap: 16px !important; }
+
+/* Leaflet map styles */
+.leaflet-container {
+    background: var(--bg-surface) !important;
+    border-radius: 12px !important;
+}
+.leaflet-popup-content-wrapper {
+    background: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+    border-radius: 8px !important;
+}

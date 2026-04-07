@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+users.db
+alert_prefs.json
+storage/
+results(7)/
+air_eka_api/
+aireka-space/
+requirements..txt
