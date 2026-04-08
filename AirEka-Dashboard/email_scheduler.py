@@ -30,9 +30,9 @@ from apscheduler.triggers.cron import CronTrigger
 # ──────────────────────────────────────────────────────────────────────
 # CONFIGURATION — À REMPLIR
 # ──────────────────────────────────────────────────────────────────────
-SENDER_EMAIL       = "deepstats.contact@gmail.com"
-SENDER_APP_PASSWORD = "ermo fxfc gngx rtso"
-SENDER_DISPLAY     = "AirEka · Deepstats"
+SENDER_EMAIL        = os.environ.get("GMAIL_SENDER", "")
+SENDER_APP_PASSWORD = os.environ.get("GMAIL_APP_PASSWORD", "")
+SENDER_DISPLAY      = "AirEka · Deepstats"
 
 # Fichier local de stockage des préférences utilisateurs
 PREFS_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "alert_prefs.json")
@@ -314,8 +314,8 @@ def send_alert_email(recipient_email: str, name: str, city: str,
     """Envoie l'email d'alerte. Retourne (succès, message)."""
     if not recipient_email:
         return False, "Adresse email manquante"
-    if "xxxx" in SENDER_APP_PASSWORD:
-        return False, "App Password Gmail non configuré dans email_scheduler.py"
+    if not SENDER_EMAIL or not SENDER_APP_PASSWORD:
+        return False, "Variables d'environnement GMAIL_SENDER ou GMAIL_APP_PASSWORD manquantes"
     try:
         msg = MIMEMultipart("alternative")
         msg["Subject"] = f"🌿 AirEka · Qualité de l'air à {city} — AQI {aqi:.0f}"
